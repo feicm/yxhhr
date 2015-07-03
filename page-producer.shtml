@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge7,chrome=1"/>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>我想成为制作人_17173.com中国游戏第一门户站</title>
+<!--#include virtual="/inc-site/head-begin.shtml" wait="yes"-->
+<link href="http://ue.17173cdn.com/cache/lib/v2/reset-and-utils-1.0.css" rel="stylesheet" type="text/css" />
+<link href="src/css/producer.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ue.17173cdn.com/a/lib/jquery-1.11.1.min.js"></script>
+<!--[if IE 6]>
+	<script type="text/javascript" src="http://ue.17173cdn.com/cache/lib/v1/ddpng-0.0.8a.min.js"></script>
+	<script type="text/javascript">
+		DD_belatedPNG.fix('.png, .ico-time, .ico-tip');		
+	</script>
+<![endif]-->
+<!--#include virtual="/inc-site/head-end.shtml" wait="yes"-->
+</head>
+<body>
+<!--#include virtual="/inc-site/body-begin.shtml" wait="yes"-->
+<div class="wrap layer-ref">	
+	<!-- header begin -->
+	<div class="header">			
+		<div class="info-box">
+			<div class="tit"><i class="ico ico-tip"></i>请填写联系方式并在规定时间内完成答卷提交给我们，17173将会把您的资料推荐给知名的游戏厂商：</div>
+			<div class="form-box">
+				<div class="form-item">
+					<label>姓名：</label>
+					<div class="form-group"><input value="陈龙辉" id="name" type="text" class="form-control" /><b class="mask"></b></div>
+				</div>
+				<div class="form-item">
+					<label>邮箱：</label>
+					<div class="form-group"><input value="a@b.com" id="email" type="text" class="form-control" /><b class="mask"></b></div>
+				</div>
+				<div class="form-item">
+					<label>手机：</label>
+					<div class="form-group"><input value="13444444444" id="phone" type="text" class="form-control" /><b class="mask"></b></div>
+				</div>
+				<div class="form-item form-item-last">
+					<label>QQ：</label>
+					<div class="form-group"><input value="" id="qq" type="text" class="form-control" /><b class="mask"></b></div>
+				</div>
+			</div>
+		</div>
+		<div class="link-box"><a href="javascript:;" id="start" class="comm-btn">开始答题</a></div>
+	</div>
+	<!-- header end -->	
+	<!-- time-bar begin -->
+	<div class="time-bar layer-side">
+		<div class="bar-in">
+			<div class="time-box">
+				<div class="tit">答题时间</div>
+				<div class="time"><i class="ico ico-time"></i><span id="t_m">30:</span><span id="t_s">00</span></div>
+			</div>
+		</div>
+	</div>
+	<!-- time-bar end -->	
+	<!-- content begin -->
+	<div id="qArea" class="content" style="display: none;">
+		<div class="mod-question">
+			<div class="mod-hd">
+				<h1 class="tit">答题开始（共40题，每题2.5分）</h1>
+			</div>
+			<div class="mod-bd">
+				<div class="list-question" data-paperid="p1" style="display: none">
+					<div data-questionid="q1" class="item">
+						<div class="title">
+							<div class="num">01</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="A" name="q1" class="form-radio" /><span class="form-radio-txt">副本活动经验值曲线设</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q2" class="item item-l">
+						<div class="title">
+							<div class="num">02</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="B" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q3" class="item">
+						<div class="title">
+							<div class="num">03</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q4" class="item">
+						<div class="title">
+							<div class="num">04</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q5" class="item">
+						<div class="title">
+							<div class="num">05</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="C" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q6" class="item">
+						<div class="title">
+							<div class="num">06</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">									
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="list-question" data-paperid="p2" style="display: none">
+					<div data-questionid="q1" class="item">
+						<div class="title">
+							<div class="num">01</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="A" name="q1" class="form-radio" /><span class="form-radio-txt">副本活动经验值曲线设</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q2" class="item item-l">
+						<div class="title">
+							<div class="num">02</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="B" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q3" class="item">
+						<div class="title">
+							<div class="num">03</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q4" class="item">
+						<div class="title">
+							<div class="num">04</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q5" class="item">
+						<div class="title">
+							<div class="num">05</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="C" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q6" class="item">
+						<div class="title">
+							<div class="num">06</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="list-question" data-paperid="p3" style="display: none">
+					<div data-questionid="q1" class="item">
+						<div class="title">
+							<div class="num">01</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="A" name="q1" class="form-radio" /><span class="form-radio-txt">副本活动经验值曲线设</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q2" class="item item-l">
+						<div class="title">
+							<div class="num">02</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="B" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q3" class="item">
+						<div class="title">
+							<div class="num">03</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q4" class="item">
+						<div class="title">
+							<div class="num">04</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q5" class="item">
+						<div class="title">
+							<div class="num">05</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="C" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q6" class="item">
+						<div class="title">
+							<div class="num">06</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="list-question" data-paperid="p4" style="display: none">
+					<div data-questionid="q1" class="item">
+						<div class="title">
+							<div class="num">01</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="A" name="q1" class="form-radio" /><span class="form-radio-txt">副本活动经验值曲线设</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q1" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q2" class="item item-l">
+						<div class="title">
+							<div class="num">02</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="B" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q2" class="form-radio" /><span class="form-radio-txt">每一个人一个掉落包，互相掉落的物品独立计算</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q3" class="item">
+						<div class="title">
+							<div class="num">03</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q3" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q4" class="item">
+						<div class="title">
+							<div class="num">04</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q4" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q5" class="item">
+						<div class="title">
+							<div class="num">05</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="C" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="D" name="q5" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+					<div data-questionid="q6" class="item">
+						<div class="title">
+							<div class="num">06</div>
+							<div class="tit">下列选项中，是RTS类游戏的是：</div>
+						</div>
+						<div class="form-box2">
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="A" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="B" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="0" value="C" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+							<div class="form-item">
+								<label class="form-radio-con"><input type="radio" data-goal="1" value="D" name="q6" class="form-radio" /><span class="form-radio-txt">魔兽争霸</span></label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="link-box"><a href="javascript:;" class="comm-btn btn-send" id="submit"><i class="ico ico-send"></i>提交问卷</a></div>
+		</div>
+	</div>
+	<!-- content end -->
+</div>
+<a href="#" class="go-top" id="floating"><i class="ico ico-top"></i></a>
+
+<script type="text/javascript" src="src/js/app.js"></script>
+<!--#include virtual="/inc-site/footer.shtml" wait="yes"-->
+<!--[if IE 6]>
+<script type="text/javascript" src="http://ue.17173cdn.com/a/news/p/2015/js/producer-ie6.js"></script>
+<![endif]-->
+</body>
+</html>

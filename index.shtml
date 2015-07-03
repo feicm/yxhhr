@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>游戏合伙人</title>
+    <!--#include virtual="/inc-site/head-begin.shtml" wait="yes"-->
+    <link type="text/css" rel="stylesheet" href="http://ue.17173cdn.com/cache/lib/v2/reset-and-utils-1.0.css" />
+    <script type="text/javascript" src="http://ue.17173cdn.com/cache/lib/v2/jquery-1.7.2.js"></script>
+    <!--#include virtual="/inc-site/head-end.shtml" wait="yes"-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://ue.17173cdn.com/cache/lib/v1/ddpng-0.0.8a.min.js"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('.png, .ico-time, .ico-tip');
+    </script>
+    <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript" src="src/js/json2.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--#include virtual="/inc-site/body-begin.shtml" wait="yes"-->
+<div class="wrap">
+    <div class="time">
+        <span id="t_m">00:</span><span id="t_s">00</span>
+    </div>
+    <input type="text" id="name"/>
+    <input type="text" id="phone"/>
+    <input type="text" id="email"/>
+    <input type="text" id="qq"/>
+    <button id="start">开始答题</button>
+    <div id="qArea" style="display: none"><!--问题区域-->
+        <ul class="list-question" data-testpaperid="p1" style="display: none"><!--题套id-->
+            <li data-questionid="q1">
+                1
+                <input type=radio data-goal="1" value="A" name="q1">A
+                <input type=radio data-goal="0" value="B" name="q1">B
+                <input type=radio data-goal="0" value="C" name="q1">C
+                <input type=radio data-goal="0" value="D" name="q1">D
+            </li>
+            <li data-questionid="q2">
+                2
+                <input type=radio data-goal="0" value="A" name="q2">A
+                <input type=radio data-goal="0" value="B" name="q2">B
+                <input type=radio data-goal="1" value="C" name="q2">C
+                <input type=radio data-goal="0" value="D" name="q2">D
+            </li>
+            <li data-questionid="q3">
+                3
+                <input type=radio data-goal="0" value="A" name="q3">A
+                <input type=radio data-goal="1" value="B" name="q3">B
+                <input type=radio data-goal="0" value="C" name="q3">C
+                <input type=radio data-goal="0" value="D" name="q3">D
+            </li>
+        </ul>
+        <ul class="list-question" data-testpaperid="p2" style="display: none"><!--题套id-->
+            <li data-questionid="q1">
+                1
+                <input type=radio data-goal="1" value="A" name="q1">A
+                <input type=radio data-goal="0" value="B" name="q1">B
+                <input type=radio data-goal="0" value="C" name="q1">C
+                <input type=radio data-goal="0" value="D" name="q1">D
+            </li>
+            <li data-questionid="q2">
+                2
+                <input type=radio data-goal="0" value="A" name="q2">A
+                <input type=radio data-goal="0" value="B" name="q2">B
+                <input type=radio data-goal="1" value="C" name="q2">C
+                <input type=radio data-goal="0" value="D" name="q2">D
+            </li>
+            <li data-questionid="q3">
+                3
+                <input type=radio data-goal="0" value="A" name="q3">A
+                <input type=radio data-goal="1" value="B" name="q3">B
+                <input type=radio data-goal="0" value="C" name="q3">C
+                <input type=radio data-goal="0" value="D" name="q3">D
+            </li>
+        </ul>
+        <ul class="list-question" data-testpaperid="p3" style="display: none"><!--题套id-->
+            <li data-questionid="q1">
+                1
+                <input type=radio data-goal="1" value="A" name="q1">A
+                <input type=radio data-goal="0" value="B" name="q1">B
+                <input type=radio data-goal="0" value="C" name="q1">C
+                <input type=radio data-goal="0" value="D" name="q1">D
+            </li>
+            <li data-questionid="q2">
+                2
+                <input type=radio data-goal="0" value="A" name="q2">A
+                <input type=radio data-goal="0" value="B" name="q2">B
+                <input type=radio data-goal="1" value="C" name="q2">C
+                <input type=radio data-goal="0" value="D" name="q2">D
+            </li>
+            <li data-questionid="q3">
+                3
+                <input type=radio data-goal="0" value="A" name="q3">A
+                <input type=radio data-goal="1" value="B" name="q3">B
+                <input type=radio data-goal="0" value="C" name="q3">C
+                <input type=radio data-goal="0" value="D" name="q3">D
+            </li>
+        </ul>
+        <ul class="list-question" data-testpaperid="p4" style="display: none"><!--题套id-->
+            <li data-questionid="q1">
+                1
+                <input type=radio data-goal="1" value="A" name="q1">A
+                <input type=radio data-goal="0" value="B" name="q1">B
+                <input type=radio data-goal="0" value="C" name="q1">C
+                <input type=radio data-goal="0" value="D" name="q1">D
+            </li>
+            <li data-questionid="q2">
+                2
+                <input type=radio data-goal="0" value="A" name="q2">A
+                <input type=radio data-goal="0" value="B" name="q2">B
+                <input type=radio data-goal="1" value="C" name="q2">C
+                <input type=radio data-goal="0" value="D" name="q2">D
+            </li>
+            <li data-questionid="q3">
+                3
+                <input type=radio data-goal="0" value="A" name="q3">A
+                <input type=radio data-goal="1" value="B" name="q3">B
+                <input type=radio data-goal="0" value="C" name="q3">C
+                <input type=radio data-goal="0" value="D" name="q3">D
+            </li>
+        </ul>
+    </div>
+    <button id="submit">提交</button>
+</div>
+<!--#include virtual="/inc-site/footer.shtml" wait="yes"-->
+…
+<!--#include virtual="/inc-site/body-end.shtml" wait="yes"-->
+<script type="text/javascript" src="src/js/app.js"></script>
+</body>
+</html>

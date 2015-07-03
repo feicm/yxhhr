@@ -1,0 +1,119 @@
+/* global reset */
+html{height: 100%}
+body{ position:relative;font-size:12px; font-family:Microsoft YaHei,SimSun; min-width: 1000px;min-height: 100%;background-color:#1d1d49 }
+img{ vertical-align:middle}
+a:hover{ text-decoration:underline; _vertical-align:baseline}
+a:focus,button,input,select,textarea{ outline:none}
+textarea{ resize:none}
+
+.ico{ background: url(http://ue2.17173cdn.com/a/news/p/2015/img/b1-p.png) no-repeat; display: inline-block; vertical-align: middle; overflow: hidden;}
+.ico-tip{ width:14px; height: 14px; margin: 10px 10px 13px 0; }
+.ico-time{ width:31px; height: 30px; margin: 3px 14px 11px 0; background-position:-15px 0; *margin: 5px 14px 9px 0}
+.ico-send{ background: url(http://ue1.17173cdn.com/a/news/p/2015/img/b2-p.png) no-repeat; width:18px; height: 23px; margin: 10px 10px 16px 0; }
+.ico-top{ width: 22px; height: 14px; background: url(http://ue1.17173cdn.com/a/news/p/2015/img/b2-p.png) -19px 0 no-repeat;}
+
+.comm-btn{ display: inline-block; background: #00b7f2; color: #fff; font-size: 30px; font-weight: bold; line-height: 56px; border-bottom: 4px solid #009cce; padding: 0 60px; border-radius:30px}
+.comm-btn:hover{ text-decoration: none; background:#36cdff; border-color: #2eaed9}
+
+.comm-btn2{ display: inline-block; color: #fff; font-size: 16px; line-height:36px; padding: 0 28px; background: #00c051; border-bottom: 4px solid #00a345}
+.comm-btn2-ex2{ background:#00b7f2; border-color:#009cce}
+.comm-btn2:hover{ text-decoration: none; background: #00db5d;  border-color:#00ba4f}
+.comm-btn2-ex2:hover{ background:#36cdff; border-color: #2eaed9}
+
+.mask{ overflow: hidden; position: absolute; z-index: -1; top: 0; left: 0; width: 300px; height: 100px; background: #000; filter: alpha(opacity=50); opacity: .5;}
+:root .mask{ filter: none \0;}
+
+.form-control{ background: none; border: none; width: 100%; color: #00c0ff; font-size: 14px;  height: 30px; line-height: 30px}
+
+.wrap{ background: #1d1d49 url(http://ue2.17173cdn.com/a/news/p/2015/img/bg1-p.jpg) center top no-repeat; position: relative;}
+
+.header{ height: 655px; position: relative; width: 1000px; margin: 0 auto}
+.header .info-box{ position: absolute; left: 0; top:254px; border-top:1px dotted #4d4576; border-bottom: 1px dotted #4d4576; padding: 22px 0 40px 0; width: 1000px}
+.header .info-box .tit{ color: #b1b1da; font-size: 16px; line-height: 40px}
+.header .form-box{ overflow: hidden; *zoom:1; padding-top: 26px}
+.header .form-box .form-item{ float: left; margin-right: 23px; font-size: 0;}
+.header .form-box .form-item-last{ margin: 0; float: right;}
+.header .form-box .form-item label{ color: #fff; font-size: 14px; display: inline-block; line-height: 30px; vertical-align: top; *display: inline; *zoom:1; white-space: nowrap;}
+.header .form-box .form-item .form-group{ display: inline-block; *display: inline; *zoom:1;}
+.header .form-box .form-group{ width: 166px; padding: 0 13px; position: relative; overflow: hidden; z-index: 5}
+.header .form-box .form-group .mask{ background: #635fc2; filter: alpha(opacity=30); opacity: .3;}
+.header .link-box{ position: absolute; width: 100%; top:498px; left: 0; text-align: center;}
+
+.time-bar{ position: absolute; width: 100%; background:url(http://ue2.17173cdn.com/a/news/p/2015/img/bg2-p.jpg) top center no-repeat;  top:655px;}
+.time-bar .bar-in{ width: 1000px; margin: 0 auto; position: relative; height: 90px;}
+.time-box{ position: absolute; width: 170px; right: 0; top:14px; color: #00c1ff; font-size:14px; text-align: center;}
+.time-box .tit{ padding-left: 5px; line-height: 1.2}
+.time-box .time{ font-size:32px; font-weight: bold; line-height: 48px}
+.time-bar-fixed{ position: fixed; top:45px; _position:absolute;}
+
+.content{ padding-top: 110px;padding-bottom: 100px; width: 1000px; margin: 0 auto}
+
+.mod-question .mod-hd{ padding: 20px 0}
+.mod-question .mod-hd .tit{ font-size: 22px; font-weight: bold; color:#61619e}
+.mod-question .mod-bd{ background: url(http://ue2.17173cdn.com/a/news/p/2015/img/bg2-p.png) left top repeat-x; padding-top: 11px}
+.list-question .item{ background: #23234f; margin-bottom: 4px; padding: 12px 20px 35px}
+.list-question .title{ font-size: 0; color: #00c1ff; font-weight: bold;}
+.list-question .title .num{ display: inline-block; font-size:30px; line-height: 40px; margin-right: 16px; *display: inline; *zoom:1;}
+.list-question .title .tit{ display: inline-block; font-size: 14px; vertical-align: top; margin-top: 14px; *display: inline; *zoom:1;}
+.list-question .form-box2{ overflow: hidden; *zoom:1; padding:13px 0 0 80px}
+.list-question .form-box2 .form-item{ float:left; width: 23%;}
+.list-question .form-box2 .form-radio-con{  display: inline-block; height: 26px; line-height: 26px;color: #b1b1da; font-size: 14px; *zoom:1; overflow: hidden;}
+.list-question .form-box2 .form-radio{  margin: 3px 10px 6px 0; vertical-align: middle;}
+.list-question .item-odd{ background: #2a2955}
+.list-question .item-l .form-item{ float: none; width: 100%; padding: 5px 0}
+.mod-question .link-box{ text-align: center; padding: 26px 0 35px 0}
+.mod-question .btn-send{ padding: 0 45px}
+
+.go-top{ display: none; text-align: center; border:4px solid #3e3e72; width: 42px; padding:12px 0 15px 0}
+.go-top:hover{ text-decoration: none; border-color: #7272b4}
+.go-top:hover .ico-top{ background-position:-42px 0}
+
+.comm-pop{ width: 550px; background: #fff; border-top:5px solid #333; border-radius: 3px; z-index: 1000}
+.comm-pop .pop-in{ padding:38px 20px 40px}
+.comm-pop .btn-close{ color: #333333; font-size:20px; position: absolute; right: 18px; top:12px; font-family: SimSun; font-weight: bold; cursor: pointer;}
+.comm-pop .pop-tit{ text-align: center; color: #333; font-size: 16px; padding: 10px 0}
+.comm-pop .link-box{ text-align: center; padding-top: 20px}
+.comm-pop .link-box .btn-first{ margin-right:20px}
+.comm-pop .pop-con{ overflow: hidden; *zoom:1;}
+.comm-pop .pic-box{ float: left;}
+.comm-pop .detail-box{ overflow: hidden; *zoom:1}
+.comm-pop .pop-score .title{ font-size: 0}
+.comm-pop .pop-score .title .tit{ display: inline-block; font-size:20px; color: #333; vertical-align: top; margin-top: 8px; padding-bottom: 6px; *display: inline; *zoom:1;}
+.comm-pop .pop-score .title .num{ display: inline-block; font-size:30px; font-weight: bold; color: #ff4e00; margin-left: 8px; line-height: 40px; *display: inline; *zoom:1;}
+.comm-pop .pop-score .txt{ font-size: 16px; color:#666666; line-height:30px}
+.comm-pop .pop-score1{ padding: 0 20px 0 40px}
+.comm-pop .pop-score1 .pic-box{ padding-right: 20px; padding-top: 10px}
+.comm-pop .pop-score2{ padding: 0 20px 0 60px}
+.comm-pop .pop-score2 .pic-box{ padding-right: 40px; padding-top: 5px}
+.comm-pop .pop-score2 .title .num{ color: #60ce68}
+.ue-dialog{width: 550px; background: #fff; border-top:5px solid #333; border-radius: 3px; z-index: 1000;  padding: 35px 10px 20px;top:150px !important}
+.ue-dialog .dialog-close{
+    color: #333333;
+    font-size: 20px;
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    font-family: SimSun;
+    font-weight: bold;
+    cursor: pointer;
+}
+.ue-dialog .dialog-head,
+.ue-dialog .dialog-body,
+.ue-dialog .dialog-foot{width: 550px;text-align: center; color: #333; font-size: 16px; padding: 10px 0}
+.ue-dialog .dialog-foot .dialog-submit,
+.ue-dialog .dialog-foot .dialog-cancel {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    line-height: 36px;
+    padding: 0 38px;
+    background: #00c051;
+    border-bottom: 4px solid #00a345;
+}
+.ue-dialog .dialog-foot .dialog-submit{margin-right: 20px}
+.ue-dialog .dialog-foot .dialog-cancel{
+    background: #00b7f2;
+    border-color: #009cce;
+}
+.global-footer{ position:absolute;width:100%;bottom:0;left:0;color:#696981; background: #17173d; padding:25px 0 50px 0}
+.global-footer a:hover, .global-footer a:link, .global-footer a:visited, .global-footer a:active{ color:#696981; padding: 0 9px}
