@@ -4,59 +4,13 @@
 (function (W, undefined) {
     'use strict';
     /*
-     * Cookie 操作封装
-     * */
-    var Cookie = {
-        set          : function (name, value, expires) {
-            var argv = arguments;
-            var argc = arguments.length;
-            var expires = (argc > 2) ? argv[2] : null;
-            var path = (argc > 3) ? argv[3] : null;
-            var domain = (argc > 4) ? argv[4] : null;
-            var secure = (argc > 5) ? argv[5] : false;
-            document.cookie = name + '=' + escape(value) + ((expires === null) ?
-                '' : ('; expires=' + expires.toGMTString())) + ((path === null) ?
-                '' : ('; path=' + path)) + ((domain === null) ?
-                '' : ('; domain=' + domain)) + ((secure === true) ?
-                '; secure' : '');
-        },
-        get          : function (name) {
-            var arg = name + '=';
-            var alen = arg.length;
-            var clen = document.cookie.length;
-            var i = 0;
-            while ( i < clen ) {
-                var j = i + alen;
-                if ( document.cookie.substring(i, j) == arg ) {
-                    return Cookie._getCookieVal(j);
-                }
-                i = document.cookie.indexOf(' ', i) + 1;
-                if ( i === 0 ) {
-                    break;
-                }
-            }
-            return null;
-        },
-        _getCookieVal: function (offset) {
-            var endstr = document.cookie.indexOf(';', offset);
-            if ( endstr == -1 ) {
-                endstr = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(offset, endstr));
-        },
-        reset        : function (key) {
-            var expdate = new Date();
-            Cookie.set(key, null, expdate);
-        }
-    };
-
-    /*
      * 制作人答题
      * */
     var Answer = {
-        REMAINING_TIME     : Cookie.get('REMAINING_TIME') - 0 || 30 * 60 * 1000,//剩余时间
+        REMAINING_TIME     : $.cookie('REMAINING_TIME') - 0 || 30 * 60 * 1000,//剩余时间
         POST_URL           : 'http://act.17173.com/2015/05/yxhhr0709/index.php',//提交地址
         inter              : null,//定时器
+        EXPIRES            : 1,//缓存过期时间
         papers             : {},
         countRightAnswer   : 0,//正确答题数
         questionHtmlArr    : [],//题目dom数组
@@ -68,7 +22,7 @@
             email       : null,
             questionInfo: {
                 paperId    : null,//题目套号
-                questionsId: Cookie.get('QUESTIONS') ? Cookie.get('QUESTIONS').split('---') : 0 || [],//问题id
+                questionsId: $.cookie('QUESTIONS') ? $.cookie('QUESTIONS').split('---') : 0 || [],//问题id
                 answers    : {} //答案
             },
             takeTime    : 0,  //答题用时
@@ -77,12 +31,12 @@
         init               : function () {
             var _self = this;
             var paperId = _self.getRandomPaperId(4);
-            if ( Cookie.get('REMAINING_TIME') && Cookie.get('PAPERID') && Cookie.get('PAPERID') !== 'null' ) {
-                $('#name').val(decodeURI(Cookie.get('NAME')));
-                $('#phone').val(Cookie.get('PHONE'));
-                $('#email').val(Cookie.get('EMAIL'));
-                $('#qq').val(Cookie.get('QQ'));
-                _self.renderQuestionsList(Cookie.get('PAPERID'));
+            if ( $.cookie('REMAINING_TIME') && $.cookie('PAPERID') ) {
+                $.cookie('NAME') && $('#name').val(decodeURI($.cookie('NAME')));
+                $.cookie('PHONE') && $('#phone').val($.cookie('PHONE'));
+                $.cookie('EMAIL') && $('#email').val($.cookie('EMAIL'));
+                $.cookie('QQ') && $('#qq').val($.cookie('QQ'));
+                _self.renderQuestionsList($.cookie('PAPERID'));
                 $('#qArea').show();
                 _self.bindEvent(true);
                 $('#start').off('click');
@@ -105,7 +59,7 @@
                     e = e || window.event;
                     if ( _self.REMAINING_TIME > 0 ) {
                         _self.storeAnswerInfo();
-                        e.returnValue = '答题还未结束，确定要离开网页？';
+                        //e.returnValue = '答题还未结束，确定要离开网页？';
                     }
                 };
             }
@@ -189,10 +143,10 @@
                     _self.answerInfo.phone = phone;
                     _self.answerInfo.email = email;
                     _self.answerInfo.qq = qq;
-                    Cookie.set('NAME', encodeURI(name));
-                    Cookie.set('PHONE', phone);
-                    Cookie.set('EMAIL', email);
-                    Cookie.set('QQ', qq);
+                    $.cookie('NAME', encodeURI(name), {expires: _self.EXPIRES});
+                    $.cookie('PHONE', phone, {expires: _self.EXPIRES});
+                    $.cookie('EMAIL', email, {expires: _self.EXPIRES});
+                    $.cookie('QQ', qq, {expires: _self.EXPIRES});
                     if ( result.status === 3 ) {
                         _self.msgBox('alert', {
                             title  : '抱歉！',
@@ -217,10 +171,10 @@
                     _self.answerInfo.phone = phone;
                     _self.answerInfo.email = email;
                     _self.answerInfo.qq = qq;
-                    Cookie.set('NAME', encodeURI(name));
-                    Cookie.set('PHONE', phone);
-                    Cookie.set('EMAIL', email);
-                    Cookie.set('QQ', qq);
+                    $.cookie('NAME', encodeURI(name), {expires: _self.EXPIRES});
+                    $.cookie('PHONE', phone, {expires: _self.EXPIRES});
+                    $.cookie('EMAIL', email, {expires: _self.EXPIRES});
+                    $.cookie('QQ', qq, {expires: _self.EXPIRES});
                 });
             }
         },
@@ -286,12 +240,12 @@
         storeAnswerInfo    : function () {
             var _self = this;
             var answerNum;
-            Cookie.set('PAPERID', _self.answerInfo.questionInfo.paperId);
-            if ( Cookie.get('QUESTIONS')===null ) {
-                Cookie.set('QUESTIONS', _self.answerInfo.questionInfo.questionsId.join('---'));
+            $.cookie('PAPERID', _self.answerInfo.questionInfo.paperId, {expires: _self.EXPIRES});
+            if ( !$.cookie('QUESTIONS') ) {
+                $.cookie('QUESTIONS', _self.answerInfo.questionInfo.questionsId.join('---'), {expires: _self.EXPIRES});
             }
             answerNum = _self.getAnswerNum();
-            answerNum && Cookie.set('ANSWERS', JSON.stringify(_self.answerInfo.questionInfo.answers));
+            answerNum && $.cookie('ANSWERS', JSON.stringify(_self.answerInfo.questionInfo.answers), {expires: _self.EXPIRES});
         },
         //获取答题数
         getAnswerNum       : function () {
@@ -333,7 +287,7 @@
         //获取答题用时
         getTakeTime        : function () {
             var _self = this;
-            var _time = 30 * 60 * 1000 - (Cookie.get('REMAINING_TIME') - 0);
+            var _time = 30 * 60 * 1000 - ($.cookie('REMAINING_TIME') - 0);
             var _m = Math.floor(_time / 1000 / 60 % 60);
             var _s = Math.floor(_time / 1000 % 60);
             _m < 10 ? _m = '0' + _m : _m;
@@ -420,7 +374,7 @@
             $('#t_m').text(m + ':');
             $('#t_s').text(s);
             _self.REMAINING_TIME -= 1000;
-            Cookie.set('REMAINING_TIME', _self.REMAINING_TIME);
+            $.cookie('REMAINING_TIME', _self.REMAINING_TIME, {expires: _self.EXPIRES});
         },
         /**
          数组元素乱序
@@ -455,16 +409,15 @@
                 var $this = $(this);
                 _paperId = $this.attr('data-paperid');
                 if ( _paperId === paperId ) {
-                    if ( Cookie.get('PAPERID') && Cookie.get('PAPERID') !== 'null' ) {//答题中途关闭网页
-                        //_self.questionHtmlArr = Cookie.get('QUESTIONS').split('---');
+                    if ( $.cookie('PAPERID') ) {//答题中途关闭网页
                         _items = $this.find('.item');
-                        _questionsId = Cookie.get('QUESTIONS').split('---');
+                        _questionsId = $.cookie('QUESTIONS').split('---');
                         for ( var i = 0; i < _questionsId.length; i++ ) {
                             var item = _items[_questionsId[i].substr(1) - 0 - 1];
                             _self.questionHtmlArr.push($('<p>').append($(item).clone()).html());
                         }
-                        JSON.parse(Cookie.get('ANSWERS')) && _self.fillAnswers();
-                        _self.answerInfo.questionInfo.paperId = Cookie.get('PAPERID');//保存题套
+                        //$.cookie('ANSWERS') && _self.fillAnswers();
+                        _self.answerInfo.questionInfo.paperId = $.cookie('PAPERID');//保存题套
                         _self.questionWrap = $this;
                         _self.show($this);
                         return false;
@@ -485,27 +438,31 @@
         //填充答案
         fillAnswers        : function () {
             var _self = this;
-            var _questionLi = '';
             var _questionid = '';
             var _curAnswer = '';
-            var answerObj = JSON.parse(Cookie.get('ANSWERS'));
-            for ( var i = _self.questionHtmlArr.length - 1; i >= 0; i-- ) {
-                _questionLi = $(_self.questionHtmlArr[i]);
-                _questionid = _questionLi.data('questionid');
-                if ( answerObj[_questionid] !== undefined ) {
-                    _curAnswer = answerObj[_questionid].select;
-                    _questionLi.find('input').each(function (index) {
-                        var $this = $(this);
-                        if ( $this.val() === _curAnswer ) {
-                            $this.attr('checked', 'checked');
-                        } else {
-                            $this.attr('checked', false);
+            var _paperId = '';
+            console.dir($.cookie('ANSWERS'));
+            var answerObj = JSON.parse($.cookie('ANSWERS'));
+            $('.list-question').each(function (index) {
+                var $this = $(this);
+                _paperId = $this.attr('data-paperid');
+                if ( _paperId === $.cookie('PAPERID') ) {
+                    $this.find('.item').each(function (index) {
+                        _questionid = $(this).data('questionid');
+                        if ( answerObj[_questionid] !== undefined ) {
+                            _curAnswer = answerObj[_questionid].select;
+                            $(this).find('input').each(function (index) {
+                                var $this = $(this);
+                                if ( $this.val() === _curAnswer ) {
+                                    $this.attr('checked', 'checked');
+                                } else {
+                                    $this.attr('checked', false);
+                                }
+                            });
                         }
-                        _questionLi = $this.parents('.item');
-                        _self.questionHtmlArr[i] = $('<p>').append(_questionLi.clone()).html();
                     });
                 }
-            }
+            });
         },
         //重排显示
         show               : function (wrap) {
@@ -525,8 +482,9 @@
                 _self.answerInfo.questionInfo.questionsId.push(_questionId);
                 _self.questionHtmlArr[i] = itemhtml;
             }
-            wrap.append($(_html));
+            wrap.html(_html);
             wrap.show();
+            $.cookie('ANSWERS') && _self.fillAnswers();
             $('.list-question .item:odd').addClass('item-odd');
             var timeT = $('.time-bar').offset().top;
             $(window).scroll(function () {
@@ -609,5 +567,4 @@
             });
         });
     });
-    W.Cookie = Cookie;
 })(window, undefined);

@@ -1,0 +1,37 @@
+<html>
+<head><title>this is id onbeforunload event test</title>
+</head>
+<script type="text/javascript" async="" src="http://ue.17173cdn.com/a/lib/pandora.js"></script>
+<script type="text/javascript" language="javascript">
+    var goodexit = false;
+    function bindunbeforunload() {
+        goodexit = false;
+        window.onbeforeunload = perforresult;
+    }
+    function unbindunbeforunload() {
+        goodexit = true;
+        window.onbeforeunload = null;
+    }
+    function perforresult() {
+        if ( !goodexit ) {
+            return "手动阀?";
+        }
+    }
+    function alerta() {
+        pandora.use(['confirm'], function (Confirm) {
+            new Confirm({
+                importStyle: true,
+                title  : '您好！',
+                content: '您还未回答，是否确认提交?'
+            });
+        });
+    }
+</script>
+<body onload="javascript:return bindunbeforunload();">
+<h1>test is start</h1>
+<input type="button" value="a" id="btnBind" onclick="return bindunbeforunload();"/>
+<input type="button" value="b" id="btnUnBind" onclick="unbindunbeforunload();"/>
+<input type="button" value="b" id="test" onclick="alerta();"/>
+</body>
+
+</html> 
