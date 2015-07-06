@@ -1,7 +1,8 @@
 /**
  * Created by chenlonghui@cyou-inc.com on 2015/6/25.
  */
-(function (W, undefined) {
+
+$(function(){
     'use strict';
     /*
      * 制作人答题
@@ -9,8 +10,9 @@
     var Answer = {
         REMAINING_TIME     : $.cookie('REMAINING_TIME') - 0 || 30 * 60 * 1000,//剩余时间
         POST_URL           : 'http://act.17173.com/2015/05/yxhhr0709/index.php',//提交地址
-        inter              : null,//定时器
         EXPIRES            : 1,//缓存过期时间
+        STARTTIME          : $.cookie('STARTTIME') - 0 || 0,//开始答题时间
+        inter              : null,//定时器
         papers             : {},
         countRightAnswer   : 0,//正确答题数
         questionHtmlArr    : [],//题目dom数组
@@ -30,12 +32,16 @@
         },
         init               : function () {
             var _self = this;
+            var currentTime = new Date().getTime();
             var paperId = _self.getRandomPaperId(4);
             if ( $.cookie('REMAINING_TIME') && $.cookie('PAPERID') ) {
                 $.cookie('NAME') && $('#name').val(decodeURI($.cookie('NAME')));
                 $.cookie('PHONE') && $('#phone').val($.cookie('PHONE'));
                 $.cookie('EMAIL') && $('#email').val($.cookie('EMAIL'));
                 $.cookie('QQ') && $('#qq').val($.cookie('QQ'));
+                if ( $.cookie('STARTTIME') ) {//关闭浏览器重新打开，关闭期间计时继续
+                    _self.REMAINING_TIME = 30 * 60 * 1000 - currentTime + ($.cookie('STARTTIME') - 0);
+                }
                 _self.renderQuestionsList($.cookie('PAPERID'));
                 $('#qArea').show();
                 _self.bindEvent(true);
@@ -55,7 +61,7 @@
             }, 1000));
 
             if ( isStart ) {
-                W.onbeforeunload = function (e) {//关闭选项卡（含刷新）
+                window.onbeforeunload = function (e) {//关闭选项卡（含刷新）
                     e = e || window.event;
                     if ( _self.REMAINING_TIME > 0 ) {
                         _self.storeAnswerInfo();
@@ -84,7 +90,8 @@
             if ( $('#qArea').css('display') === 'block' ) {
                 return false;
             }
-            if ( name === '' || !/^([\u4e00-\u9fa5]){2,7}$/.test(name) ) {
+            _self.initStartTime();//首次点击“开始”保存当前时间戳
+            if ( name === '' || !/^([\u4e00-\u9fa5]){2,7}$/.test(name) ) {//姓名
                 _self.msgBox('alert', {
                     title  : '抱歉！',
                     content: '\u8bf7\u8f93\u5165\u6b63\u786e\u59d3\u540d\uff01'
@@ -94,7 +101,7 @@
                 });
             }
             else if ( phone === '' || !/^(13[0-9]|15[0|1|2|3|5|6|7|8|9]|18[0-9]|17[6|7|8])\d{8}$/.test(phone) ) {
-                _self.msgBox('alert', {
+                _self.msgBox('alert', { //手机号
                     title  : '抱歉！',
                     content: '\u8bf7\u8f93\u5165\u6b63\u786e\u624b\u673a\u53f7\u7801\uff01'
                 });
@@ -103,7 +110,7 @@
                 });
             }
             else if ( email === '' || !/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(email) ) {
-                _self.msgBox('alert', {
+                _self.msgBox('alert', { //邮箱
                     title  : '抱歉！',
                     content: '\u8bf7\u8f93\u5165\u6b63\u786e\u90ae\u7bb1\uff01'
                 });
@@ -111,7 +118,7 @@
                     _self.startListener(e, $(this));
                 });
             }
-            else if ( qq === '' || !/^\d{5,10}$/.test(qq) ) {
+            else if ( qq === '' || !/^\d{5,10}$/.test(qq) ) {//QQ
                 _self.msgBox('alert', {
                     title  : '抱歉！',
                     content: '\u8bf7\u8f93\u5165\u6b63\u786eQQ\u53f7\u7801\uff01'
@@ -126,12 +133,12 @@
                  email:邮箱
                  mobile:手机
                  qq:QQ*/
-                $('html,body').animate({scrollTop: $('.time-bar').offset().top}, 500);
+                //$('html,body').animate({scrollTop: $('.time-bar').offset().top}, 500);
                 _self.bindEvent(true);
                 $.ajax({
                     url     : _self.POST_URL + '?do=updateUserInfo',
                     data    : {
-                        name  : name,
+                        name  : encodeURI(name),
                         email : email,
                         mobile: phone,
                         qq    : qq
@@ -143,7 +150,7 @@
                     _self.answerInfo.phone = phone;
                     _self.answerInfo.email = email;
                     _self.answerInfo.qq = qq;
-                    $.cookie('NAME', encodeURI(name), {expires: _self.EXPIRES});
+                    $.cookie('NAME', name, {expires: _self.EXPIRES});
                     $.cookie('PHONE', phone, {expires: _self.EXPIRES});
                     $.cookie('EMAIL', email, {expires: _self.EXPIRES});
                     $.cookie('QQ', qq, {expires: _self.EXPIRES});
@@ -166,15 +173,15 @@
                     btn.on('click', function (e) {
                         _self.startListener(e, $(this));
                     });
-                    $('#qArea').show();//debug
-                    _self.answerInfo.name = name;
-                    _self.answerInfo.phone = phone;
-                    _self.answerInfo.email = email;
-                    _self.answerInfo.qq = qq;
-                    $.cookie('NAME', encodeURI(name), {expires: _self.EXPIRES});
-                    $.cookie('PHONE', phone, {expires: _self.EXPIRES});
-                    $.cookie('EMAIL', email, {expires: _self.EXPIRES});
-                    $.cookie('QQ', qq, {expires: _self.EXPIRES});
+                    /*$('#qArea').show();//debug
+                     _self.answerInfo.name = name;
+                     _self.answerInfo.phone = phone;
+                     _self.answerInfo.email = email;
+                     _self.answerInfo.qq = qq;
+                     $.cookie('NAME', encodeURI(name), {expires: _self.EXPIRES});
+                     $.cookie('PHONE', phone, {expires: _self.EXPIRES});
+                     $.cookie('EMAIL', email, {expires: _self.EXPIRES});
+                     $.cookie('QQ', qq, {expires: _self.EXPIRES});*/
                 });
             }
         },
@@ -441,7 +448,6 @@
             var _questionid = '';
             var _curAnswer = '';
             var _paperId = '';
-            console.dir($.cookie('ANSWERS'));
             var answerObj = JSON.parse($.cookie('ANSWERS'));
             $('.list-question').each(function (index) {
                 var $this = $(this);
@@ -499,6 +505,12 @@
                     $('.time-bar').removeClass('time-bar-fixed');
                 }
             });
+        },
+        //初始化做题时间
+        initStartTime      : function () {
+            var _self = this;
+            _self.STARTTIME = new Date().getTime();
+            $.cookie('STARTTIME', _self.STARTTIME, {expires: _self.EXPIRES});
         },
         //随机获取题套id
         getRandomPaperId   : function (num) {
@@ -567,4 +579,4 @@
             });
         });
     });
-})(window, undefined);
+});
